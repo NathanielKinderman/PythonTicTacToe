@@ -45,7 +45,18 @@ def win_check(board,mark):
 
 def choose_first():
     if random.randint(0,1) == 0:
-        return 'player 2'
-    else:
         return 'player 1'
+    else:
+        return 'player 2'
+
+def space_check(board, position):
+    return board[position] == ' '
+
+def full_board_check(board):
+    for i in range(1,10):
+        if space_check(board, i):
+            return False
+    return True
+
+
 
