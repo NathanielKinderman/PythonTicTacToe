@@ -1,7 +1,7 @@
 from IPython.display import clear_output
 import random
 
-
+marker: ''
 def display_board(board):
     clear_output()
     print(board[1] + '|' + board[2] + '|' + board[3])
@@ -108,6 +108,24 @@ while True:
                 else:
                     turn = 'Player 2'
 
-        
+        else:
+            # Player2's turn.
+            
+            display_board(theBoard)
+            position = player_choice(theBoard)
+            place_marker(theBoard, player2_marker, position)
+
+            if win_check(theBoard, player2_marker):
+                display_board(theBoard)
+                print('Player 2 has won!')
+                game_on = False
+            else:
+                if full_board_check(theBoard):
+                    display_board(theBoard)
+                    print('The game is a draw!')
+                    break
+                else:
+                    turn = 'Player 1'
+
     if not replay():
         break
