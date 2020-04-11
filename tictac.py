@@ -18,7 +18,7 @@ def player_input():
     '''
     OUTPUT:(Player 1 marker, Player 2 maker)
     '''
-    marker: ''
+    marker = ' '
     #Keep asking player 1 to be x or o
     while not (marker == 'X' or marker == 'O'):
         marker = input('Player 1: Do you want to be X or O? ').upper()
